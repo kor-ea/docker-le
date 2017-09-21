@@ -1,0 +1,24 @@
+version: '3'
+services:
+  proxy:
+    container_name: proxy
+    image: nginx:latest
+    volumes:
+      - ./proxy/:/etc/nginx/conf.d/:ro
+      - /var/www/:/var/www/
+      - /etc/letsencrypt:/etc/letsencrypt
+    ports:
+      - 80:80
+      - 443:443
+  sample1:
+    container_name: sample1
+    image: nginx:latest
+    volumes:
+      - ./sample1/:/etc/nginx/conf.d/:ro
+      - /var/www/:/var/www/
+  sample2:
+    container_name: sample2
+    image: nginx:latest
+    volumes:
+      - ./sample2/:/etc/nginx/conf.d/:ro
+      - /var/www/:/var/www/
