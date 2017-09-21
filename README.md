@@ -9,7 +9,7 @@
 * le.sh Bash script for generating certificates
 * docker-composer.yml - containers' configuration
 
-##Instruction
+## Instruction
 1. Edit ./proxy/default.conf to fit your environment. Ssl directives should be commented out if certificate does not exist.
 1. Run 'docker-compose up' to start proxy and sample websites ('docker-compose up -d' for detached mode)
 1. Change domains in le.sh 
@@ -17,4 +17,5 @@
 1. Uncomment ssl directives in ./proxy/default.conf
 1. Reload Nginx by running 'docker exec proxy nginx -s reload' to apply changes in config file.
 
-##Updating certificates
+## Updating certificates
+Add to crontab renew.sh script
