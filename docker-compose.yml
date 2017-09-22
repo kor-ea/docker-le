@@ -10,6 +10,9 @@ services:
     ports:
       - 80:80
       - 443:443
+    depends_on:
+      - sample1
+      - sample2
   sample1:
 #    build:
 #      context: ./build
